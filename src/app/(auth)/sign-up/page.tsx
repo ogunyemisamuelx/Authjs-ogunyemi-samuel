@@ -1,11 +1,18 @@
+import { GithubSignIn } from "@/app/components/github-sign-in";
+import { Button } from "@/app/components/ui/button";
+import { Input } from "@/app/components/ui/input";
+import Link from "next/link";
+
 const Page = async () => {
   return (
     <div className="w-full max-w-sm mx-auto space-y-6">
       <h1 className="text-2xl font-bold text-center mb-6">Create Account</h1>
-      <div>GithubSignIn</div>
+
+      <GithubSignIn />
+
       <div className="relative">
-        <div className=" absolute inset-0 flex items-center">
-          <span className="w-full border-t"></span>
+        <div className="absolute inset-0 flex items-center">
+          <span className="w-full border-t" />
         </div>
         <div className="relative flex justify-center text-sm">
           <span className="bg-background px-2 text-muted-foreground">
@@ -13,33 +20,37 @@ const Page = async () => {
           </span>
         </div>
       </div>
-      {/* {Email/Password Sign Up} */}
+
+      {/* Email/Password Sign Up */}
       <form
         className="space-y-4"
         action={async () => {
           "use server";
         }}
       >
-        <input
+        {/* <Input
           name="email"
-          type="email"
           placeholder="Email"
+          type="email"
           required
           autoComplete="email"
         />
-        <input
-          type="password"
+        <Input
           name="password"
           placeholder="Password"
+          type="password"
+          required
           autoComplete="new-password"
         />
-        <button>Sign Up</button>
+        <Button className="w-full" type="submit">
+          Sign Up
+        </Button> */}
       </form>
+
       <div className="text-center">
-        <button>
-          <link href="/sign-in" />
-          Already have an account? Sign in
-        </button>
+        <Button asChild variant="link">
+          <Link href="/sign-in">Already have an account? Sign in</Link>
+        </Button>
       </div>
     </div>
   );

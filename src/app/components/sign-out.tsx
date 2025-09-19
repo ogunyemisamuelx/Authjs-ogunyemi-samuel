@@ -8,8 +8,8 @@ const SignOut = () => {
   };
 
   return (
-    <div className="flex justify-center">
-      <button>Sign Out</button>
+    <div className="flex justify-center text-[8px] font-semibold">
+      <button onClick={handleSignOut}>Sign Out</button>
     </div>
   );
 };
