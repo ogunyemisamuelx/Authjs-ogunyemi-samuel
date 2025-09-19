@@ -153,7 +153,9 @@ const Page = async () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-4">
-              <h1 className="text-2xl font-bold text-gray-900">📊 Dashboard</h1>
+              <h1 className="lg:text-2xl text-[8px] font-bold text-gray-900">
+                📊 Dashboard
+              </h1>
               <nav className="hidden md:flex space-x-6">
                 <a href="#" className="text-blue-600 font-medium">
                   Overview
@@ -173,12 +175,14 @@ const Page = async () => {
               </nav>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="p-2 text-gray-400 hover:text-gray-600">
+              <button className="p-2 text-gray-400 hover:text-gray-600 lg:text-sm text-[7px]">
                 🔔
               </button>
               <div className="bg-blue-50 rounded-lg px-3 py-1">
-                <p className="text-sm text-blue-600">Signed in as:</p>
-                <p className="text-sm font-medium text-blue-800">
+                <p className="lg:text-sm text-[8px] text-blue-600 ">
+                  Signed in as:
+                </p>
+                <p className="lg:text-sm text-[8px] font-medium text-blue-800">
                   {session.user?.email}
                 </p>
               </div>
