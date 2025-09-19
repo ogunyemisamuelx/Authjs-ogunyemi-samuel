@@ -1,7 +1,7 @@
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { SignOut } from "./components/sign-out";
-// @typescript-eslint/no-explicit-any
+
 const Page = async () => {
   const session = await auth();
   if (!session) redirect("/sign-in");
@@ -120,7 +120,7 @@ const Page = async () => {
     },
   ];
 
-  const getStatusColor = (status: any) => {
+  const getStatusColor = (status: string): string => {
     switch (status) {
       case "Completed":
         return "bg-green-100 text-green-800";
@@ -133,7 +133,7 @@ const Page = async () => {
     }
   };
 
-  const getNotificationIcon = (type: any) => {
+  const getNotificationIcon = (type: string): string => {
     switch (type) {
       case "success":
         return "✅";
@@ -153,10 +153,8 @@ const Page = async () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-4">
-              <h1 className="lg:text-2xl font-bold text-gray-900 text-[10px]">
-                📊 Dashboard
-              </h1>
-              <nav className="hidden md:flex space-x-6  lg:text-[16px] md:text-[10px]">
+              <h1 className="text-2xl font-bold text-gray-900">📊 Dashboard</h1>
+              <nav className="hidden md:flex space-x-6">
                 <a href="#" className="text-blue-600 font-medium">
                   Overview
                 </a>
@@ -175,14 +173,12 @@ const Page = async () => {
               </nav>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="p-2 text-gray-400 hover:text-gray-600 text-[8px] lg:text-sm">
+              <button className="p-2 text-gray-400 hover:text-gray-600">
                 🔔
               </button>
               <div className="bg-blue-50 rounded-lg px-3 py-1">
-                <p className="lg:text-sm md:text-sm text-[10px] text-blue-600">
-                  Signed in as:
-                </p>
-                <p className="lg:text-sm md:text-sm font-medium text-[8px] text-blue-800">
+                <p className="text-sm text-blue-600">Signed in as:</p>
+                <p className="text-sm font-medium text-blue-800">
                   {session.user?.email}
                 </p>
               </div>
@@ -199,7 +195,7 @@ const Page = async () => {
             Welcome back! 👋
           </h2>
           <p className="text-gray-600">
-            Here&apos;s what&apos;s happening with your business today.
+            Here's what's happening with your business today.
           </p>
         </div>
 
