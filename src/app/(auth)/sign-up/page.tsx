@@ -1,6 +1,5 @@
 import { GithubSignIn } from "@/app/components/github-sign-in";
 import { Button } from "@/app/components/ui/button";
-import { Input } from "@/app/components/ui/input";
 import Link from "next/link";
 
 const Page = async () => {
