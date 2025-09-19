@@ -179,10 +179,10 @@ const Page = async () => {
                 🔔
               </button>
               <div className="bg-blue-50 rounded-lg px-3 py-1">
-                <p className="lg:text-sm text-[12px] text-blue-600 ">
+                <p className="lg:text-sm text-[13px] text-blue-600 ">
                   Signed in as:
                 </p>
-                <p className="lg:text-sm text-[8px] font-medium text-blue-800">
+                <p className="lg:text-sm text-[12px] font-medium text-blue-800">
                   {session.user?.email}
                 </p>
               </div>
